@@ -6,4 +6,4 @@ What I learn:
 
 Semantic html, flexbox etc.
 
-Live Preview - https://santhedeveloper.github.io/landing-page/
+[Live Preview](https://santhedeveloper.github.io/landing-page/)
