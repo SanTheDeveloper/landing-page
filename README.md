@@ -4,4 +4,4 @@ This project is a part of Odin Project learning curriculum. Here I'm building a 
 
 What I learn:
 
-1.
+Semantic html, flexbox etc.
