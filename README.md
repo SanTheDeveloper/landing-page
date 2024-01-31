@@ -5,3 +5,5 @@ This project is a part of Odin Project learning curriculum. Here I'm building a 
 What I learn:
 
 Semantic html, flexbox etc.
+
+Live Preview - https://santhedeveloper.github.io/landing-page/
