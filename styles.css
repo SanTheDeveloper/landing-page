@@ -1,0 +1,255 @@
+/* --- 1. Global Setup & Fonts --- */
+/* Imports the Roboto font from Google Fonts with multiple weights (300, 400, 700, 900) */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900&display=swap");
+
+/* The universal selector (*) resets default browser spacing so we have full control */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and borders are included in element widths */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+/* This is a global image reset that prevents images from breaking out of their containers */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- 2. Header & Hero Section --- */
+.dark-background-wrapper {
+  background-color: #1f2937;
+  padding: 20px 0 100px 0; /* Top: 20px, Bottom: 100px. Gives breathing room inside the dark box */
+}
+
+/* We reuse this logic for .header, .information, and .cta to keep content perfectly aligned down the center of the page */
+.header,
+.information,
+.cta {
+  max-width: 1000px; /* Stops the website from stretching too wide on massive monitors */
+  margin: 0 auto; /* The "auto" margin on the left/right physically centers the block */
+  padding: 0 20px; /* Prevents text from touching the edge on smaller screens */
+}
+
+/* --- Navigation Layout --- */
+.nav {
+  display: flex;
+  justify-content: space-between; /* Pushes logo to far left, links to far right */
+  align-items: center; /* Vertically centers the logo and links */
+  margin-bottom: 80px;
+}
+
+.header-logo {
+  width: 60px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px; /* Adds space between the individual links */
+  list-style-type: none; /* Removes the default bullet points from the <li> elements */
+}
+
+.nav-links li a {
+  text-decoration: none; /* Removes the underline from links */
+  color: #e5e7eb;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Makes the hover effect smooth instead of instant */
+}
+
+.nav-links li a:hover {
+  color: #f9faf8;
+}
+
+/* --- Hero Layout --- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* Space between the text block and the main image */
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1; /* Tells this side to take up 50% of the available space */
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  color: #f9faf8;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero-left p {
+  font-size: 18px;
+  color: #e5e7eb;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.hero-right {
+  flex: 1; /* Tells the image side to take up the other 50% of the space */
+  display: flex;
+  justify-content: flex-end; /* Aligns the image to the right edge */
+}
+
+.hero-image {
+  width: 450px;
+  height: 250px;
+  object-fit: cover; /* Forces the image to fill the 450x250 box without stretching or squishing */
+  border-radius: 8px;
+}
+
+/* --- 3. Buttons --- */
+.btn-primary {
+  background-color: #3882f6;
+  color: #f9faf8;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start; /* Stops the button from stretching to the full width of the column */
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #f9faf8; /* Creates the hollow box look */
+  color: #f9faf8;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Flexbox fixes to prevent the button from being squished by long text */
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-outline:hover {
+  background-color: #f9faf8;
+  color: #3882f6; /* Inverts the text color on hover so it remains visible */
+}
+
+/* --- 4. Information Section --- */
+.information {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center; /* Centers the main H2 heading */
+}
+
+.information h2 {
+  font-size: 36px;
+  color: #1f2937;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center; /* Centers the row of 4 cards */
+  gap: 40px;
+  flex-wrap: wrap; /* If the screen gets too small, cards will drop to a new row instead of breaking */
+}
+
+.card {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the text below the image */
+  gap: 12px;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid #3882f6;
+  border-radius: 12px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* --- 5. Quote Section --- */
+.quote-section {
+  background-color: #e5e7eb;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the quote block on the page */
+}
+
+blockquote {
+  max-width: 800px; /* Prevents the text from spanning too wide, making it easier to read */
+  font-size: 36px;
+  color: #1f2937;
+  font-weight: 300; /* Uses the lighter Roboto font weight per the design */
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.quote-author {
+  max-width: 800px;
+  width: 100%;
+  text-align: right; /* Pushes the author name to the right side of the container */
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* --- 6. Call to Action Section --- */
+.cta {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.cta-container {
+  background-color: #3882f6;
+  border-radius: 12px;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between; /* Text left, button right */
+  align-items: center; /* Centers them vertically */
+  gap: 40px;
+}
+
+.cta-text h3 {
+  font-size: 24px;
+  color: #f9faf8;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cta-text p {
+  font-size: 16px;
+  color: #e5e7eb;
+}
+
+/* --- 7. Footer --- */
+.footer {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 40px 20px;
+}
